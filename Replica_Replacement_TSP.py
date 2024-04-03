@@ -5,7 +5,7 @@ import tqdm
 
 n_cities = 30 #都市の数
 n_iter = 10**4 #繰り返し数
-n_m = 200 #レプリカ数
+n_m = 100 #レプリカ数
 delta_beta = 0.5 #温度の下げ方
 
 T = [1/((m+1)*delta_beta) for m in range(n_m+1)] #温度
@@ -65,5 +65,9 @@ for i in range(n_cities-1):
              (cities[temp_path[n_m-1][i]][1],cities[temp_path[n_m-1][i+1]][1]),":",color="r")
 plt.plot((cities[temp_path[n_m-1][n_cities-1]][0],cities[temp_path[n_m-1][0]][0]),
              (cities[temp_path[n_m-1][n_cities-1]][1],cities[temp_path[n_m-1][0]][1]),":",color="r")
+plt.title("Replica Replacement Method")
+plt.tick_params(bottom=False, left=False, right=False, top=False)
+plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False)
+plt.text(cities[:, 0].min(), cities[:, 1].min(), f"==Properties==\nn_cities={n_cities}\nn_iter={n_iter}\nn_m={n_m}\ndelta_beta={delta_beta}", horizontalalignment='left', verticalalignment='bottom', color="gray")
 plt.savefig("/Users/kotaro/Desktop/Replica_replace_method.jpg", dpi=300)
 plt.show()
