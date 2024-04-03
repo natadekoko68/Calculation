@@ -1,11 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import itertools as it;
+import itertools as it
 import tqdm
+import random
 
-n_cities = 30 #都市の数
+n_cities = 20 #都市の数
 n_iter = 10**4 #繰り返し数
-n_m = 100 #レプリカ数
+n_m = 200 #レプリカ数
 delta_beta = 0.5 #温度の下げ方
 
 T = [1/((m+1)*delta_beta) for m in range(n_m+1)] #温度
@@ -25,6 +26,15 @@ def calc_dist_from_path(path: list) -> float:
     return dist
 
 #レプリカの収容所
+# first_path = [i for i in range(n_cities)]
+# min_first_path = np.inf
+# for i in range(n_iter*10):
+#     a = list(range(n_cities))
+#     random.shuffle(a)
+#     temp_first_path = a
+#     if min_first_path > calc_dist_from_path(temp_first_path):
+#         first_path = temp_first_path
+#         min_first_path = calc_dist_from_path(temp_first_path)
 temp_path = [[i for i in range(n_cities)] for _ in range(n_m)]
 
 #main()
