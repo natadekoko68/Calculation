@@ -80,4 +80,6 @@ plt.tick_params(bottom=False, left=False, right=False, top=False)
 plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False)
 plt.text(cities[:, 0].min(), cities[:, 1].min(), f"==Properties==\nn_cities={n_cities}\nn_iter={n_iter}\nn_m={n_m}\ndelta_beta={delta_beta}", horizontalalignment='left', verticalalignment='bottom', color="gray")
 plt.savefig("/Users/kotaro/Desktop/Replica_replace_method.jpg", dpi=300)
+plt.savefig("Replica_replace_method.jpg", dpi=300)
+
 plt.show()
