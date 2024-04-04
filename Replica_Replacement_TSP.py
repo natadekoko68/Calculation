@@ -26,21 +26,12 @@ def calc_dist_from_path(path: list) -> float:
     return dist
 
 #レプリカの収容所
-# first_path = [i for i in range(n_cities)]
-# min_first_path = np.inf
-# for i in range(n_iter*10):
-#     a = list(range(n_cities))
-#     random.shuffle(a)
-#     temp_first_path = a
-#     if min_first_path > calc_dist_from_path(temp_first_path):
-#         first_path = temp_first_path
-#         min_first_path = calc_dist_from_path(temp_first_path)
 temp_path = [[i for i in range(n_cities)] for _ in range(n_m)]
 
 #main()
 for iter in tqdm.tqdm(range(n_iter)):
     dists = [0 for i in range(n_m)]
-    #レプリカごとに交換操作
+    #レプリカ内に交換操作
     for m in range(n_m):
         dist_init = calc_dist_from_path(temp_path[m])
 
