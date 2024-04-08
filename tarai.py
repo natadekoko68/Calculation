@@ -1,6 +1,5 @@
 import itertools as it
 from functools import lru_cache
-from tqdm import tqdm
 import sys
 
 sys.setrecursionlimit(2000)
@@ -14,30 +13,14 @@ def tarai(x, y, z):
 
 def tarai_hypothesis(x,y,z):
     a = min(x,y,z)
-    x_p = x - a
-    y_p = y - a
-    z_p = z - a
-    if (x_p == 0) and (y_p == 0) and (z_p == 0):
-        return a
-    if (x_p == 0) and (y_p == 0):
-        return a
-    if (x_p == 0) and (z_p == 0):
+    if ((y == a) and (z == a)) or (x==a):
         return y
-    if (z_p == 0) and (y_p == 0):
-        return a
-    if x_p == 0:
-        return y
-    if y_p == 0:
+    elif y == a:
         return z
-    if z_p == 0:
+    elif z == a:
         return max(x, y)
-
-
-
 
 if __name__ == "__main__":
     for i, j, k in it.product(range(1, 101), repeat=3):
         if tarai(i, j, k) != tarai_hypothesis(i, j, k):
             print(i, j, k)
-
-
