@@ -24,3 +24,4 @@ if __name__ == "__main__":
     for i, j, k in it.product(range(1, 101), repeat=3):
         if tarai(i, j, k) != tarai_hypothesis(i, j, k):
             print(i, j, k)
+

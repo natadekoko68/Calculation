@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import itertools as it
 
-n_cities = 40 #都市の数
-n_iter = 10000 #繰り返し数
+n_cities = 20 #都市の数
+n_iter = 1000 #繰り返し数
 n_m = 200 #レプリカ数
 delta_beta = 0.5 #温度の下げ方
 
